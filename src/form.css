@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+:root {
+    --main-color: rgb(0, 255, 136);
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+#form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+input {
+    height: 35px;
+    padding: 0px 5px;
+    font-family: 'Inter', sans-serif;
+}
+
+#form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+#form > button {
+    background-color: var(--main-color);
+    width: 50%;
+    border: 0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+}
+
+#form > button:focus-visible {
+    outline: 0;
+}
