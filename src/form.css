@@ -3,20 +3,30 @@
     --main-color: rgb(0, 255, 136);
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+}
+
 p {
     margin-block-start: 0;
     margin-block-end: 0;
 }
 
+.form-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #form {
-    width: 100%;
-    height: 100%;
+    width: 400px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    font-family: 'Inter', sans-serif;
 }
 
 input {
@@ -45,4 +55,11 @@ input {
 
 #form > button:focus-visible {
     outline: 0;
+}
+
+.techs button {
+    border: 0;
+    background-color: transparent;
+    color: var(--main-color);
+    cursor: pointer;
 }
