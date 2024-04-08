@@ -4,7 +4,10 @@ import { z } from 'zod';
 export const FormSchema = z.object( {
     name: z.string().min(3, 'Insira um nome'),
     email: z.string().min(1, 'Insira um email').email('Insira um email válido')
-    .refine(value => {return value.endsWith('hotmail.com')}, 'Insira um hotmail'),
+    .refine(
+        value => value.endsWith('hotmail.com'), 
+        'Insira um hotmail'
+    ),
     pass: z.string().min(1, 'Insira uma senha').min(8, 'Senha muito curta: 8-15').max(15, 'Senha muito longa: 8-15'),
     techs: z.array( 
         z.string().min(1, 'Digite uma tecnologia')
