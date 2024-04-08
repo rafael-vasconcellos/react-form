@@ -1,22 +1,27 @@
-import { useState } from 'react'
+import { z } from 'zod';
 
-export class createFormHook {
-    private _state: any[];
-    name: string;
 
-    constructor(name: string) {
-        this._state = useState()
-        this.name = name
-    }
+export const FormSchema = z.object( {
+    name: z.string().min(3, 'Insira um nome'),
+    email: z.string().min(1, 'Insira um email').email('Insira um email válido')
+    .refine(value => {return value.endsWith('hotmail.com')}, 'Insira um hotmail'),
+    pass: z.string().min(1, 'Insira uma senha').min(8, 'Senha muito curta: 8-15').max(15, 'Senha muito longa: 8-15'),
+    techs: z.array( 
+        z.string().min(1, 'Digite uma tecnologia')
+    ).optional()
+} )
 
-    get error() {
-        return this._state[0]
-    }
-
-    set error(newValue: string) {
-        this._state[0] = this._state[1](() => newValue)
-    }
+export const formStateBase = {
+    name: "",
+    email: "",
+    pass: "",
+    techs: ""
 }
+
+
+
+
+
 
 
 /* 
