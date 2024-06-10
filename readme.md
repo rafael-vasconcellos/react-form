@@ -1,1 +1,3 @@
-Validação de formulário html usando a biblioteca *zod* em uma aplicação react
+## Sobre  
+
+Estudo de validação de formulários html em uma aplicação react usando a biblioteca *zod*
